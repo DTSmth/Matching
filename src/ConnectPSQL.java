@@ -5,7 +5,7 @@ public class ConnectPSQL {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/matchingDB";
         String username = "postgres";
-        String password = "GGotr38**11";
+        String password = "";
 
         Connection conn = null;
         try {
