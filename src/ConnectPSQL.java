@@ -1,11 +1,11 @@
-
 import java.sql.*;
+import java.util.Scanner;
 
 public class ConnectPSQL {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/matchingDB";
         String username = "postgres";
-        String password = "";
+        String password = "GGotr38**11";
 
         Connection conn = null;
         try {
@@ -13,9 +13,14 @@ public class ConnectPSQL {
             conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to PostgreSQL server!");
 
+            // Get user input
+            System.out.println("Whats your query");
+            Scanner scanner = new Scanner(System.in);
+            String query = scanner.nextLine();
+
             // Execute a query
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM openhours");
+            ResultSet rs = stmt.executeQuery(query);
 
             // Process the results
             while (rs.next()) {
